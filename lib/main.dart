@@ -5,6 +5,7 @@ import 'package:flutter_assignment/screens/home_screen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
+  SystemChrome.setPreferredOrientations([.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
-        colorScheme: .fromSeed(seedColor: Colors.deepOrangeAccent),
+        appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.white)),
+        colorScheme: .fromSeed(seedColor: Colors.blue),
       ),
       home: const HomeScreen(),
     );

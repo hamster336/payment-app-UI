@@ -9,15 +9,18 @@ class QuickActionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: action.color,
-            borderRadius: BorderRadius.circular(14),
-          ),
-          child: Center(
-            child: Text(action.emoji, style: TextStyle(fontSize: 24)),
+        InkWell(
+          onTap: () {},
+          child: Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              color: action.color,
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Center(
+              child: Text(action.emoji, style: TextStyle(fontSize: 24)),
+            ),
           ),
         ),
         SizedBox(height: 6),

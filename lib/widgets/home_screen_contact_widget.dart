@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment/constants/global_variables.dart';
 
-class ContactView extends StatelessWidget {
+class HomeScreenContactWidget extends StatelessWidget {
   final String name;
-  const ContactView({super.key, required this.name});
+  const HomeScreenContactWidget({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CircleAvatar(
-          radius: 27,
-          backgroundColor: getAvatarColor(name),
-          child: Text(
-            getInitials(name),
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-              letterSpacing: 1,
+        InkWell(
+          onTap: () {},
+          child: CircleAvatar(
+            radius: 27,
+            backgroundColor: getAvatarColor(name),
+            child: Text(
+              getInitials(name),
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                letterSpacing: 1,
+              ),
             ),
           ),
         ),

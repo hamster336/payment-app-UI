@@ -5,5 +5,5 @@ List<String> contacts = [
   'Thor',
   'Steve Jobs',
   'Jagga Daaku',
-  'Thor',
+  'Jonathan',
 ];

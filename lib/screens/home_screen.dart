@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_assignment/constants/global_variables.dart';
 import 'package:flutter_assignment/data/dummy_data.dart';
 import 'package:flutter_assignment/models/quick_action.dart';
+import 'package:flutter_assignment/screens/contact_screen.dart';
 import 'package:flutter_assignment/widgets/balance_card.dart';
-import 'package:flutter_assignment/widgets/contact_widget.dart';
+import 'package:flutter_assignment/widgets/home_screen_contact_widget.dart';
 import 'package:flutter_assignment/widgets/quick_action_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         label: 'Request\nMoney',
         color: Color(0xFFE0F7EF),
       ),
-      QuickAction(emoji: '📷', label: 'Scan\n& Pay', color: Color(0xFFFFF3E0)),
+      QuickAction(emoji: '🤳', label: 'Scan\n& Pay', color: Color(0xFFFFF3E0)),
       QuickAction(emoji: '🕐', label: 'History', color: Color(0xFFFCE4EC)),
     ];
 
@@ -31,7 +32,6 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: size.height * 0.3,
               width: size.width,
               decoration: BoxDecoration(color: GlobalVariables.primaryColor),
 
@@ -108,7 +108,7 @@ class HomeScreen extends StatelessWidget {
                                 backgroundColor:
                                     GlobalVariables.backgroundColor,
                                 child: Text(
-                                  ContactView.getInitials(user),
+                                  HomeScreenContactWidget.getInitials(user),
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
@@ -122,6 +122,7 @@ class HomeScreen extends StatelessWidget {
                           SizedBox(height: size.height * 0.025),
 
                           balanceCard(),
+                          SizedBox(height: size.height * 0.025),
                         ],
                       ),
                     ),
@@ -158,23 +159,34 @@ class HomeScreen extends StatelessWidget {
 
             // send to contacts
             SizedBox(height: size.height * 0.0175),
-            Row(
-              mainAxisAlignment: .start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.05,
-                    vertical: 10,
-                  ),
-                  child: Text(
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.05,
+                vertical: 10,
+              ),
+              child: Row(
+                mainAxisAlignment: .spaceBetween,
+                children: [
+                  Text(
                     'SEND TO CONTACTS',
                     style: TextStyle(
                       color: Colors.black54,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                ),
-              ],
+
+                  InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const ContactScreen()),
+                    ),
+                    child: const Text(
+                      'See all',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ),
+                ],
+              ),
             ),
 
             SingleChildScrollView(
@@ -190,7 +202,7 @@ class HomeScreen extends StatelessWidget {
                         width: 80,
                         child: Padding(
                           padding: EdgeInsets.only(right: 19),
-                          child: ContactView(name: name),
+                          child: HomeScreenContactWidget(name: name),
                         ),
                       ),
                     )
