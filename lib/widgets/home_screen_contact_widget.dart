@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment/constants/global_variables.dart';
+import 'package:flutter_assignment/widgets/snack_bar.dart';
 
 class HomeScreenContactWidget extends StatelessWidget {
   final String name;
@@ -10,14 +11,16 @@ class HomeScreenContactWidget extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: () {},
+          onTap: () {
+            showSnackBar(context, 'Sending money to $name...');
+          },
           child: CircleAvatar(
-            radius: 27,
+            radius: 25,
             backgroundColor: getAvatarColor(name),
             child: Text(
               getInitials(name),
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 18,
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 letterSpacing: 1,

@@ -15,6 +15,12 @@ class GlobalVariables {
     letterSpacing: 0.1,
     color: Colors.white,
     fontSize: 22,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle infoText = TextStyle(
+    fontSize: 13,
+    color: Colors.black54,
     fontWeight: FontWeight.w500,
   );
 

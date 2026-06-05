@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_assignment/screens/home_screen.dart';
+import 'package:flutter_assignment/app_shell.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.white)),
         colorScheme: .fromSeed(seedColor: Colors.blue),
       ),
-      home: const HomeScreen(),
+      home: const AppShell(),
     );
   }
 }

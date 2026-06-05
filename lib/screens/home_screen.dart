@@ -4,8 +4,11 @@ import 'package:flutter_assignment/data/dummy_data.dart';
 import 'package:flutter_assignment/models/quick_action.dart';
 import 'package:flutter_assignment/screens/contact_screen.dart';
 import 'package:flutter_assignment/widgets/balance_card.dart';
+import 'package:flutter_assignment/widgets/bill_category_grid.dart';
 import 'package:flutter_assignment/widgets/home_screen_contact_widget.dart';
+import 'package:flutter_assignment/widgets/offer_banner.dart';
 import 'package:flutter_assignment/widgets/quick_action_widget.dart';
+import 'package:flutter_assignment/widgets/settings_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,13 +21,13 @@ class HomeScreen extends StatelessWidget {
 
     final List<QuickAction> actions = [
       QuickAction(emoji: '💸', label: 'Send\nMoney', color: Color(0xFFEDE9FF)),
-      QuickAction(
-        emoji: '📥',
-        label: 'Request\nMoney',
-        color: Color(0xFFE0F7EF),
-      ),
+      QuickAction(emoji: '📥', label: 'Load\nMoney', color: Color(0xFFE0F7EF)),
       QuickAction(emoji: '🤳', label: 'Scan\n& Pay', color: Color(0xFFFFF3E0)),
-      QuickAction(emoji: '🕐', label: 'History', color: Color(0xFFFCE4EC)),
+      QuickAction(
+        emoji: '🏦',
+        label: 'Bank\nTransfer',
+        color: Color(0xFFFCE4EC),
+      ),
     ];
 
     return Scaffold(
@@ -132,24 +135,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             // quick action widgets
-            Row(
-              mainAxisAlignment: .start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.05,
-                    vertical: 10,
-                  ),
-                  child: Text(
-                    'QUICK ACTIONS',
-                    style: TextStyle(
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            buildSectionHeader('QUICK ACTIONS', size),
             Row(
               crossAxisAlignment: .start,
               children: actions
@@ -158,22 +144,16 @@ class HomeScreen extends StatelessWidget {
             ),
 
             // send to contacts
-            SizedBox(height: size.height * 0.0175),
+            SizedBox(height: size.height * 0.01),
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: size.width * 0.05,
-                vertical: 10,
+                vertical: 7,
               ),
               child: Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(
-                    'SEND TO CONTACTS',
-                    style: TextStyle(
-                      color: Colors.black54,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                  Text('SEND TO CONTACTS', style: GlobalVariables.infoText),
 
                   InkWell(
                     onTap: () => Navigator.push(
@@ -209,6 +189,37 @@ class HomeScreen extends StatelessWidget {
                     .toList(),
               ),
             ),
+
+            SizedBox(height: size.height * 0.02),
+
+            // offers banner
+            OfferBannerWidget(),
+
+            SizedBox(height: size.height * 0.01),
+
+            // payments and bills
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: size.width * 0.05,
+                vertical: 7,
+              ),
+              child: Row(
+                mainAxisAlignment: .spaceBetween,
+                children: [
+                  Text('RECHARGE & PAY BILLS', style: GlobalVariables.infoText),
+
+                  InkWell(
+                    onTap: () {},
+                    child: const Text(
+                      'More',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            BillCategoryGrid(),
           ],
         ),
       ),

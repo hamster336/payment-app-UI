@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment/constants/global_variables.dart';
 import 'package:flutter_assignment/data/dummy_data.dart';
-import 'package:flutter_assignment/widgets/contact_screen_contact_widget.dart';
+import 'package:flutter_assignment/widgets/contact_screen_widget.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
