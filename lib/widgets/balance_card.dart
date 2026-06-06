@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment/constants/global_variables.dart';
+import 'package:flutter_assignment/data/dummy_data.dart';
 
 Widget balanceCard() {
   bool showBalance = true;
@@ -20,7 +21,7 @@ Widget balanceCard() {
             children: [
               Text('WALLET BALANCE', style: GlobalVariables.smallText),
               Text(
-                (!showBalance) ? '₹ XXXX.XX' : '₹ 13,640.13',
+                (!showBalance) ? '₹ XXXX.XX' : balance,
                 style: GlobalVariables.largeText,
               ),
               Text(

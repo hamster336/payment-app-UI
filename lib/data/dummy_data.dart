@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_assignment/models/offer.dart';
 import 'package:flutter_assignment/models/payment.dart';
 
+// primary user
+final String user = 'John Doe';
+final String balance = '₹ 13,640.13';
+final String reward = '643.47';
+
 // contacts
 List<String> contacts = [
   'Tony Stark',
   'Steve Rogers',
   'Prince J',
+  'Bhawana',
   'Thor',
   'Steve Jobs',
   'Jagga Daaku',
@@ -37,64 +43,80 @@ final List<Offer> banners = [
 
 // payment and bills
 final List<BillSectionItem> billItems = [
-  BillSectionItem(emoji: '📱', label: 'Topup'),
   BillSectionItem(emoji: '💧', label: 'Water'),
   BillSectionItem(emoji: '💡', label: 'Electricity'),
   BillSectionItem(emoji: '📺', label: 'TV'),
   BillSectionItem(emoji: '🏠', label: 'Rent'),
+  BillSectionItem(emoji: '✈️', label: 'Airlines'),
   BillSectionItem(emoji: ' 🚌', label: 'Transport'),
   BillSectionItem(emoji: '🛡️', label: 'Insurance'),
-  BillSectionItem(emoji: '🏥', label: 'Mdeical'),
+  BillSectionItem(emoji: '🏥', label: 'Medical'),
 ];
 
 // transactions
 final List<Map<String, dynamic>> transactions = [
-    {
-      'name': 'Tony Stark',
-      'amount': '- ₹450.00',
-      'date': 'Today, 2:30 PM',
-      'type': 'sent',
-      'icon': Icons.arrow_upward_rounded,
-      'color': Color(0xFFFF6B6B),
-    },
-    {
-      'name': 'Steve Rogers',
-      'amount': '+ ₹1,200.00',
-      'date': 'Today, 11:15 AM',
-      'type': 'received',
-      'icon': Icons.arrow_downward_rounded,
-      'color': Color(0xFF00B894),
-    },
-    {
-      'name': 'Prince J',
-      'amount': '- ₹320.50',
-      'date': 'Yesterday, 5:45 PM',
-      'type': 'sent',
-      'icon': Icons.arrow_upward_rounded,
-      'color': Color(0xFFFF6B6B),
-    },
-    {
-      'name': 'Thor',
-      'amount': '+ ₹890.00',
-      'date': 'Jun 3, 3:20 PM',
-      'type': 'received',
-      'icon': Icons.arrow_downward_rounded,
-      'color': Color(0xFF00B894),
-    },
-    {
-      'name': 'Steve Jobs',
-      'amount': '-\$150.00',
-      'date': 'Jun 2, 10:30 AM',
-      'type': 'sent',
-      'icon': Icons.arrow_upward_rounded,
-      'color': Color(0xFFFF6B6B),
-    },
-    {
-      'name': 'Jagga Daaku',
-      'amount': '+\$2,500.00',
-      'date': 'Jun 1, 9:15 AM',
-      'type': 'received',
-      'icon': Icons.arrow_downward_rounded,
-      'color': Color(0xFF00B894),
-    },
-  ];
+  {
+    'name': 'Tony Stark',
+    'amount': '- ₹450.00',
+    'date': 'Today, 2:30 PM',
+    'type': 'sent',
+    'icon': Icons.arrow_upward_rounded,
+    'color': Color(0xFFFF6B6B),
+  },
+  {
+    'name': 'Bhawana',
+    'amount': '+ ₹7500.00',
+    'date': 'Today, 12:30 PM',
+    'type': 'received',
+    'icon': Icons.arrow_downward_rounded,
+    'color': Color(0xFF00B894),
+  },
+  {
+    'name': 'Steve Rogers',
+    'amount': '+ ₹1,200.00',
+    'date': 'Today, 11:15 AM',
+    'type': 'received',
+    'icon': Icons.arrow_downward_rounded,
+    'color': Color(0xFF00B894),
+  },
+  {
+    'name': 'Prince J',
+    'amount': '- ₹320.50',
+    'date': 'Yesterday, 5:45 PM',
+    'type': 'sent',
+    'icon': Icons.arrow_upward_rounded,
+    'color': Color(0xFFFF6B6B),
+  },
+  {
+    'name': 'Thor',
+    'amount': '+ ₹890.00',
+    'date': 'Jun 5, 3:20 PM',
+    'type': 'received',
+    'icon': Icons.arrow_downward_rounded,
+    'color': Color(0xFF00B894),
+  },
+  {
+    'name': 'Steve Jobs',
+    'amount': '-\$150.00',
+    'date': 'Jun 4, 10:30 AM',
+    'type': 'sent',
+    'icon': Icons.arrow_upward_rounded,
+    'color': Color(0xFFFF6B6B),
+  },
+  {
+    'name': 'Thor',
+    'amount': '+ ₹70.00',
+    'date': 'Jun 3, 3:20 PM',
+    'type': 'sent',
+    'icon': Icons.arrow_upward_rounded,
+    'color': Color(0xFFFF6B6B),
+  },
+  {
+    'name': 'Jagga Daaku',
+    'amount': '+\$2,500.00',
+    'date': 'Jun 3, 9:15 AM',
+    'type': 'received',
+    'icon': Icons.arrow_downward_rounded,
+    'color': Color(0xFF00B894),
+  },
+];
